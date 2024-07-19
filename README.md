@@ -1,6 +1,6 @@
 # Cinema Booking System
 
-## Version: 0.2.0
+## Version: 0.3.0
 
 A Spring Boot application for managing cinema bookings.
 
@@ -8,14 +8,18 @@ A Spring Boot application for managing cinema bookings.
 - Basic entity structure (Movie, Theatre, Room, Seat, Screening, Booking)
 - JPA annotations for database mapping
 - Lombok integration for reducing boilerplate code
+- Repository layer implementation
+- Service layer with basic business logic
+- REST API controllers with CRUD operations
 
 ## Upcoming Features
-- Repository layer implementation
-- Service layer with business logic
-- REST API endpoints
-- Basic CRUD operations
-- Booking functionality
+- Implement seat viewing functionality
+- Implement seat booking functionality
+- Implement booking viewing for customers
+- Set up basic authentication and authorization
+- Implement admin reporting and management features
 - Unit tests
+- Integration tests
 
 ## Setup
 1. Clone the repository
@@ -29,15 +33,24 @@ A Spring Boot application for managing cinema bookings.
 - Lombok
 - Maven
 
+## API Endpoints
+- `/api/movies`: Movie management
+- `/api/theatres`: Theatre management
+- `/api/rooms`: Room management
+- `/api/seats`: Seat management
+- `/api/screenings`: Screening management
+- `/api/bookings`: Booking management
+
+For detailed API documentation, run the application and visit `/swagger-ui.html`
 
 ## Development Roadmap
 - [x] Initial project setup
 - [x] Define core entities (Movie, Theatre, Room, Seat, Screening, Booking)
 - [x] Implement JPA annotations for database mapping
 - [x] Integrate Lombok for reducing boilerplate code
-- [ ] Set up repository layer
-- [ ] Implement service layer with basic business logic
-- [ ] Create REST API controllers
+- [x] Set up repository layer
+- [x] Implement service layer with basic business logic
+- [x] Create REST API controllers
 - [ ] Implement seat viewing functionality
 - [ ] Implement seat booking functionality
 - [ ] Implement booking viewing for customers
@@ -50,3 +63,5 @@ A Spring Boot application for managing cinema bookings.
 
 ## Changelog
 See [CHANGELOG.md](CHANGELOG.md) for details on each version.
+
+ is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
