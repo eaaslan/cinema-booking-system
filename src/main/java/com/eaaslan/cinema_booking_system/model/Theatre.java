@@ -2,6 +2,7 @@ package com.eaaslan.cinema_booking_system.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+
 import java.util.List;
 
 @Entity
@@ -20,7 +21,7 @@ public class Theatre {
     private String name;
 
     @OneToMany(mappedBy = "theatre", cascade = CascadeType.ALL)
-    private List<Room> screenings;
+    private List<Room> rooms;
 
     @Override
     public String toString() {

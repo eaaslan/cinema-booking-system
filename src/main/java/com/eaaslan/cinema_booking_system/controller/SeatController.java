@@ -1,4 +1,3 @@
-
 package com.eaaslan.cinema_booking_system.controller;
 
 import com.eaaslan.cinema_booking_system.model.Seat;
@@ -30,20 +29,20 @@ public class SeatController {
         return ResponseEntity.ok(seatService.addSeat(seat));
     }
 
-
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteSeat(@PathVariable Long id) {
         seatService.deleteSeat(id);
         return ResponseEntity.noContent().build();
     }
 
-//    @GetMapping("/room/{roomId}")
-//    public ResponseEntity<List<Seat>> getSeatsByRoom(@PathVariable Long roomId) {
-//        return ResponseEntity.ok(seatService.getSeatsByRoom(roomId));
-//    }
-//
-//    @GetMapping("/available/{screeningId}")
-//    public ResponseEntity<List<Seat>> getAvailableSeats(@PathVariable Long screeningId) {
-//        return ResponseEntity.ok(seatService.getAvailableSeats(screeningId));
-//    }
+    // Uncomment and implement these methods if needed
+    // @GetMapping("/room/{roomId}")
+    // public ResponseEntity<List<Seat>> getSeatsByRoom(@PathVariable Long roomId) {
+    //     return ResponseEntity.ok(seatService.getSeatsByRoom(roomId));
+    // }
+    //
+    // @GetMapping("/available/{screeningId}")
+    // public ResponseEntity<List<Seat>> getAvailableSeats(@PathVariable Long screeningId) {
+    //     return ResponseEntity.ok(seatService.getAvailableSeats(screeningId));
+    // }
 }

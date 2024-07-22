@@ -7,13 +7,13 @@ import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
+
 @Getter
 @Setter
 @Service
 public class BookingService {
 
     private final BookingRepository bookingRepository;
-
 
     @Autowired
     public BookingService(BookingRepository bookingRepository) {
@@ -23,6 +23,7 @@ public class BookingService {
     public Booking addBooking(Booking booking) {
         return bookingRepository.save(booking);
     }
+
     public Booking getBookingById(Long id) {
         return bookingRepository.findById(id).orElse(null);
     }
@@ -37,12 +38,12 @@ public class BookingService {
         existingBooking.setCustomerName(booking.getCustomerName());
         return bookingRepository.save(existingBooking);
     }
+
     public List<Booking> getBookings() {
         return bookingRepository.findAll();
     }
+
     public void deleteBooking(Long id) {
         bookingRepository.deleteById(id);
     }
-
-
 }

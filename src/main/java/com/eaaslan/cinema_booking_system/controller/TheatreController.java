@@ -33,7 +33,6 @@ public class TheatreController {
         return ResponseEntity.ok(theatreService.addTheatre(theatre));
     }
 
-
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteTheatre(@PathVariable Long id) {
         theatreService.deleteTheatre(id);

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "api/v1/movie")
+@RequestMapping("/api/movies")
 public class MovieController {
 
     private final MovieService movieService;
@@ -19,25 +19,24 @@ public class MovieController {
         this.movieService = movieService;
     }
 
-    // TODO: Implement the endpoints for the MovieController
-
     @GetMapping
     public ResponseEntity<List<Movie>> getMovies() {
         return ResponseEntity.ok(movieService.getMovies());
     }
 
-    @GetMapping("/id")
-    public ResponseEntity< Movie> getMovieById(Long id) {
-        return  ResponseEntity.ok(movieService.getMovieById(id));
+    @GetMapping("/{id}")
+    public ResponseEntity<Movie> getMovieById(@PathVariable Long id) {
+        return ResponseEntity.ok(movieService.getMovieById(id));
     }
 
-    @GetMapping("/add")
-    public ResponseEntity<Movie> addMovie(Movie movie) {
+    @PostMapping
+    public ResponseEntity<Movie> addMovie(@RequestBody Movie movie) {
         return ResponseEntity.ok(movieService.addMovie(movie));
     }
 
-    @DeleteMapping("/delete")
-    public ResponseEntity<Movie> deleteMovie(Long id) {
-        return ResponseEntity.ok(movieService.deleteMovie(id));
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteMovie(@PathVariable Long id) {
+        movieService.deleteMovie(id);
+        return ResponseEntity.noContent().build();
     }
 }

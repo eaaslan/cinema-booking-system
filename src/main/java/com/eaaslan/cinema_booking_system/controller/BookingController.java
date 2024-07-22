@@ -2,16 +2,12 @@ package com.eaaslan.cinema_booking_system.controller;
 
 import com.eaaslan.cinema_booking_system.model.Booking;
 import com.eaaslan.cinema_booking_system.service.BookingService;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import lombok.Setter;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Getter
-@Setter
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/api/bookings")

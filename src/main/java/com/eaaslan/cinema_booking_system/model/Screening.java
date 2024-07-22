@@ -2,6 +2,7 @@ package com.eaaslan.cinema_booking_system.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+
 import java.time.LocalDateTime;
 
 @Entity
@@ -21,8 +22,8 @@ public class Screening {
     private Movie movie;
 
     @ManyToOne
-    @JoinColumn(name = "theatre_id", nullable = false)
-    private Theatre theatre;
+    @JoinColumn(name = "room_id", nullable = false)
+    private Room room;
 
     @Column(name = "screening_time", nullable = false)
     private LocalDateTime screeningTime;
@@ -32,7 +33,7 @@ public class Screening {
         return "Screening{" +
                 "id=" + id +
                 ", movie=" + movie.getTitle() +
-                ", theatre=" + theatre.getName() +
+                ", room=" + room.getName() +
                 ", screeningTime=" + screeningTime +
                 '}';
     }

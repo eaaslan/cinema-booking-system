@@ -1,12 +1,15 @@
 package com.eaaslan.cinema_booking_system.model;
 
 import jakarta.persistence.*;
-import lombok. *;
+import lombok.*;
 
 @Entity
 @Table(name = "seats")
 @Getter
-@Setter @NoArgsConstructor @AllArgsConstructor @Builder
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Seat {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
